@@ -23,7 +23,7 @@ const Dashboard = () => {
 
   const fetchStations = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/stations', {
+      const res = await axios.get('https://backend-iu4j.onrender.com/api/stations', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -62,7 +62,7 @@ const Dashboard = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/stations/${id}`, {
+      await axios.delete(`https://backend-iu4j.onrender.com/api/stations/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchStations(); // Refresh
@@ -76,13 +76,13 @@ const Dashboard = () => {
       if (selectedStation) {
         // Update
         await axios.put(
-          `http://localhost:5000/api/stations/${selectedStation._id}`,
+          `https://backend-iu4j.onrender.com/api/stations/${selectedStation._id}`,
           data,
           { headers: { Authorization: `Bearer ${token}` } }
         );
       } else {
         // Create
-        await axios.post('http://localhost:5000/api/stations', data, {
+        await axios.post('https://backend-iu4j.onrender.com/api/stations', data, {
           headers: { Authorization: `Bearer ${token}` },
         });
       }

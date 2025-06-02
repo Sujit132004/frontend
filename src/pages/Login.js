@@ -13,7 +13,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+            const res = await axios.post('https://backend-iu4j.onrender.com/api/auth/login', { email, password });
             // console.log(res.data.user);
 
             localStorage.setItem('token', res.data.token);
